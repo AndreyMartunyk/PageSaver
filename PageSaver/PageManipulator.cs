@@ -30,7 +30,7 @@ namespace PageSaver
                 //Console.WriteLine("Sent {0}", message);
                 
 
-                var responseData = new byte[8192];
+                var responseData = new byte[1024];
                 int bytesRead = stream.Read(responseData, 0, responseData.Length);
                 responseMessage = System.Text.Encoding.ASCII.GetString(responseData, 0, bytesRead);
                 //Console.WriteLine("Received {0}", responseMessage);

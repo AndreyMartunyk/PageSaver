@@ -12,12 +12,12 @@ namespace PageSaver
         static void Main(string[] args)
         {
             Console.WriteLine("Hello!!\nWhich site would you like to save into file: ?");
-            string link = "http://info.cern.ch/hypertext/WWW/TheProject.html";
+            string link = "http://selin.in.ua/solvve/html.html";
             //string link = Console.ReadLine();
             Console.WriteLine("link:{0} saved", link);
 
             PageManipulator pm = new PageManipulator();
-            string content = HTMLParser.CutHead(pm.GetPage(link));
+            string content = HTMLParser.CutHead(HTMLParser.CutAfterHTML(pm.GetPage(link)));
 
             Console.WriteLine("Enter the file path : ?");
             string path = @"C:\Users\User\Desktop";
