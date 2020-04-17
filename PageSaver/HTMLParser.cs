@@ -4,7 +4,7 @@ namespace PageSaver
 {
     static class HTMLParser
     {
-        public static string CutHead(string package)
+        public static string CutHeaders(string package)
         {
             try
             {
@@ -17,28 +17,6 @@ namespace PageSaver
 
             return package;
         }
-
-        public static string CutAfterHTML(string package)
-        {
-            try
-            {
-                int styleIndex = package.IndexOf("<style>");
-
-                if (styleIndex == -1)
-                {
-                    return package;
-                }
-                package = package.Substring(0, styleIndex).Trim();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("HTMLParser: Exeption {0}", e);
-            }
-
-            return package;
-        }
-
-
 
         public static string GetHost(string url)
         {
